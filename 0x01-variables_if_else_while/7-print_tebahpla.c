@@ -2,10 +2,8 @@
 
 /**
  * main - Print alphabets from last to first
- *
- * Return 0 if succeeds
+ * Return: 0 (Success)
  */
-
 int main(void)
 {
 	char k;
