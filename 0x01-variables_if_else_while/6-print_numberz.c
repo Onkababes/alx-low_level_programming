@@ -2,8 +2,7 @@
 
 /**
  * main - Show the single digit number below ten
- *
- * Retun: succes 0
+ * Return: succes 0
  */
 int main(void)
 {
