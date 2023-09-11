@@ -6,20 +6,18 @@
  */
 int main(void)
 {
-	int l, m;
+	int l;
+	int m;
 
-	l = '0';
-	m = '0';
-
-	while (l <= '9')
+	for (l = 14; m <= 26; l++)
 	{
-		while (m <= '9')
+		for (l = 15; m <= 27; m++)
 		{
-			if (l < m)
+			if (m > l)
 			{
 				putchar(l);
 				putchar(m);
-				if (l != '8' || (l == '8' && m  != '9'))
+				if (!(l == 26 && m == 27))
 				{
 					putchar(',');
 					putchar(' ');
