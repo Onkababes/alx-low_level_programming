@@ -6,22 +6,22 @@
 
 int main(void)
 {
-	int o;
-	int p;
-	int q;
+	int n;
+	int m;
+	int l;
 
-	for (o = 48; o < 58; o++)
+	for (n = 48; n < 58; n++)
 	{
-		for (p = 49; p < 58; p++)
+		for (m = 49; m < 58; m++)
 		{
-			for (q = 50; q < 58; q++)
+			for (l = 50; l < 58; l++)
 			{
-				if (o > p && p > q)
+				if (l > m && m > n)
 				{
-					putchar(o);
-					putchar(p);
-					putchar(q);
-					if (o != 55 || p != 56)
+					putchar(n);
+					putchar(m);
+					putchar(l);
+					if (n != 55 || m != 56)
 					{
 						putchar(',');
 						putchar(' ');
