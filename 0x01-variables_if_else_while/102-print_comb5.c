@@ -6,21 +6,21 @@
 
 int main(void)
 {
+	int x;
 	int y;
-	int z;
 
-	for (y = 0; y < 100; y++)
+	for (x = 0; x < 100; x++)
 	{
-		for (z = 1; z < 100; z++)
+		for (y = 1; y < 100; y++)
 		{
-			if (y < z)
+			if (x < y)
 			{
+				putchar((x / 10) + 48);
+				putchar((x % 10) + 48);
+				putchar(' ');
 				putchar((y / 10) + 48);
 				putchar((y % 10) + 48);
-				putchar(' ');
-				putchar((z / 10) + 48);
-				putchar((z % 10) + 48);
-				if (y != 98 || y != 99)
+				if (x != 98 || y != 99)
 				{
 					putchar(',');
 					putchar(' ');
