@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * main - writing alphabets 10x
+ * print_alphabet_x10 - program that shows alphabets ten times
  * Return: void
  */
 
@@ -15,8 +15,8 @@ void print_alphabet_x10(void)
 	for (d <= 'a'; d <= 'z'; d++)
 	{
 	_putchar(d);
-
+	}
 	_putchar('\n');
 	o++;
-	}
+
 }
