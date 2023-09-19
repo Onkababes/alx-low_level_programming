@@ -4,7 +4,7 @@
 
 /**
  * main - For random valid password
- * program 101-crackme.
+ * program - 101-crackme
  * Return: 0 (Success)
  */
 
@@ -15,7 +15,7 @@ int main(void)
 
 	srand(time(0));
 
-	while (sum < 1227)
+	while (sum < 2772)
 	{
 		password[index] = 33 + rand() % 94;
 		sum += password[index++];
@@ -23,12 +23,12 @@ int main(void)
 
 	password[index] = '\0';
 
-	if (sum != 1227)
+	if (sum != 2772)
 	{
-		diff_half1 = (sum - 1227) /2;
-		diff_half2 = (sum - 1227) / 2;
+		diff_half1 = (sum - 2772) /2;
+		diff_half2 = (sum - 2772) / 2;
 
-		if ((sum - 1227) % 2 != 0)
+		if ((sum - 2772) % 2 != 0)
 		diff_half1++;
 
 		for (index = 0; password[index]; index++)
