@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * _srcncat - the function that concatenate
+ * _strncat - the function that concatenate
  * @src: The string to combine
  * @dest: Another string
  * @n: the bytes storer
@@ -10,7 +10,7 @@
 
 char *_strncat(char *dest, char *src, int n)
 {
-	int index = 0, dest_length =0;
+	int index = 0, dest_length = 0;
 
 	while (dest[index++])
 	dest_length++;
