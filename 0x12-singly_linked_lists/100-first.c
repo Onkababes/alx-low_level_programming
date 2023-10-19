@@ -1,5 +1,7 @@
 #include "lists.h"
 
+void release(void) __attribute__((constructor));
+
 /**
  * release - The functiond that prints the sentence
  */
