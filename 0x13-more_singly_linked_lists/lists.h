@@ -19,12 +19,20 @@ typedef struct listint_s
 	struct listint_s *next;
 } listint_t;
 
+/**
+ * struct listp_s - singly linked list for pointers
+ * @p: pointer
+ * @next: points to the next pointer
+ *
+ * Description: singly linked list node structure for pointers
+ */
 typedef struct listp_s
 {
 	void *p;
 	struct listp_s *next;
 } listp_t;
 
+void let_listp(listp_t **head);
 void free_listp(listp_t **head);
 const listint_t **_e(const listint_t **memo, size_t li, const listint_t *node);
 listint_t *add_nodeint(listint_t **head, const int n);
