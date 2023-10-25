@@ -3,12 +3,11 @@
 #include <stdio.h>
 
 /**
- * argstostr - function that combines two strings
- * @ac: the function that counts
- * @av: The function that counts
- * Return: NULL
+ * argstostr - function that combines strings
+ * @ac: count of arguments
+ * @av: array of strings
+ * Return: pointer to the new string, or NULL if it fails
  */
-
 char *argstostr(int ac, char **av)
 {
 	int ch = 0;
@@ -18,40 +17,28 @@ char *argstostr(int ac, char **av)
 	if (ac == 0 || av == NULL)
 		return (NULL);
 
-	while (b < ac)
+	for (b = 0; b < ac; b++)
 	{
-		while (av[b][c])
-		{
+		for (c = 0; av[b][c]; c++)
 			ch++;
-			c++;
-		}
-
-		c = 0;
-		b++;
 	}
 
-	e = malloc((sizeof(char) * ch) + ac + 1);
+	e = malloc(sizeof(char) * (ch + ac + 1));
 
-	c = 0;
-	while (av[b])
+	if (e == NULL)
+		return (NULL);
+
+	for (b = 0; b < ac; b++)
 	{
-
-		while (av[b][c])
+		for (c = 0; av[b][c]; c++)
 		{
 			e[d] = av[b][c];
 			d++;
-			c++;
 		}
-
 		e[d] = '\n';
-
-		c = 0;
 		d++;
-		b++;
 	}
 
-	d++;
 	e[d] = '\0';
 	return (e);
 }
-
