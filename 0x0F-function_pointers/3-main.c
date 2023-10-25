@@ -1,4 +1,5 @@
 #include "3-calc.h"
+#include "function_pointers.h"
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -9,7 +10,7 @@
  * Return: results
  */
 
-int main(int argc, char *argv[])
+int main(int __attribute__((__unused__)) argc, char *argv[])
 {
 	char *op; /* operator */
 	int frst1, frst2; /* number inputs */

@@ -1,58 +1,66 @@
 #include "lists.h"
 
 /**
- * _e - a function that s called an array
- * @memo: the information inside
- * @li: the empty file
- * @node: new function
- * Return: pointer
+ * free_listp - function that frees a linked list
+ * @head: the first pointer
+ * Return: nothing
  */
-
-const listint_t **_e(const listint_t **memo, size_t li, const listint_t *node)
+void free_listp(listp_t **head)
 {
-	const listint_t **infor;
-	size_t t;
+	listp_t *lim;
+	listp_t *now;
 
-	infor = malloc(sizeof(listint_t *));
-	if (infor == NULL)
+	if (head != NULL)
 	{
-		free(memo);
-		exit(98);
+		now = *head;
+		while ((lim = now) != NULL)
+		{
+			now = now->next;
+			free(lim);
+		}
+		*head = NULL;
 	}
-	for (t = 0; t < li - 1; t++)
-		infor[t] = memo[t];
-	infor[t] = node;
-	free(memo);
-	return (infor);
 }
-
 /**
- * print_listint_safe - function that prints linked list
- * @head: the pointer
- * Return: 98 if it fails
+ * print_listint_safe - function that print a linked list
+ * @head: first pointer
+ * Return: nodes
  */
-
 size_t print_listint_safe(const listint_t *head)
 {
-	size_t t, yes = 0;
-	const listint_t **memo = NULL;
+	size_t nnodes = 0;
+	listp_t *hptr, *cur, *sum;
 
+	hptr = NULL;
 	while (head != NULL)
 	{
-		for (t = 0; t < yes; t++)
+		cur = malloc(sizeof(listp_t));
+
+		if (cur == NULL)
+			exit(98);
+
+		cur->p = (void *)head;
+		cur->next = hptr;
+		hptr = cur;
+
+		sum = hptr;
+
+		while (sum->next != NULL)
 		{
-			if (head == memo[t])
+			sum = sum->next;
+			if (head == sum->p)
 			{
 				printf("-> [%p] %d\n", (void *)head, head->n);
-				free(memo);
-				return (yes);
+				free_listp(&hptr);
+				return (nnodes);
 			}
 		}
-		yes++;
-		memo = _e(memo, yes, head);
+
 		printf("[%p] %d\n", (void *)head, head->n);
 		head = head->next;
+		nnodes++;
 	}
-	free(memo);
-	return (yes);
+
+	free_listp(&hptr);
+	return (nnodes);
 }
