@@ -3,6 +3,11 @@
 #include <stdlib.h>
 #include <stdio.h>
 
+int main(int argc, char *argv[]);
+void intial(char *pnt, int d);
+void _move(char *mv, int k);
+char *mul(char d, char *na, int num_in, char *din, int d_in);
+int check_num(char **ls);
 int _putchar(char c);
 void *malloc_checked(unsigned int b);
 char *string_nconcat(char *s1, char *s2, unsigned int n);
