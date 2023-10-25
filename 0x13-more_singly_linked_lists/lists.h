@@ -19,6 +19,13 @@ typedef struct listint_s
 	struct listint_s *next;
 } listint_t;
 
+typedef struct listp_s
+{
+	void *p;
+	struct listp_s *next;
+} listp_t;
+
+void free_listp(listp_t **head);
 const listint_t **_e(const listint_t **memo, size_t li, const listint_t *node);
 listint_t *add_nodeint(listint_t **head, const int n);
 size_t listint_len(const listint_t *h);
@@ -36,6 +43,5 @@ listint_t *reverse_listint(listint_t **head);
 size_t print_listint_safe(const listint_t *head);
 size_t free_listint_safe(listint_t **h);
 listint_t *find_listint_loop(listint_t *head);
-
 
 #endif
