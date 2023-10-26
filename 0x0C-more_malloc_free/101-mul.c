@@ -1,4 +1,6 @@
 #include "main.h"
+#include <stdlib.h>
+#include <stdio.h>
 
 /**
  * _move - function that moves string
@@ -104,22 +106,21 @@ void intial(char *pnt, int d)
 
 int main(int argc, char *argv[])
 {
-	int 11, 12, be, ts, t;
+	int on, ka, be, ts, t;
 	char *b;
 	char *c;
 	char d[] = "Error\n";
 
-	if (argc != 3 || check_num(argv))
-	{
+	if (argc != 3 || check_num(argv))	{
 		for (ts = 0; d[ts]; ts++)
 			_putchar(d[ts]);
 		exit(98);
 	}
-	for (11 = 0; argv[1][11]; 11++)
+	for (on = 0; argv[1][on]; on++)
 		;
-	for (12 = 0; argv[2][12]; 12++)
+	for (ka = 0; argv[2][ka]; ka++)
 		;
-	be = 11 + 12 + 1;
+	be = on + ka + 1;
 	b = malloc(be * sizeof(char));
 	if (b == NULL)
 	{
@@ -127,15 +128,16 @@ int main(int argc, char *argv[])
 			_putchar(d[ts]);
 		exit(98);
 	}
-	initial(be - 1);
-	for (ts = 12 - 1, i = 0; ts >= 0; ts--, i++)
+	intial(b, be - 1);
+
+	for (ts = ka - 1, t = 0; ts >= 0; ts--, t++)
 	{
-		c = tims(argv[2][ts], argv[1], 11 - 1, b, (be - 2) - t);
+		c = mul(argv[2][ts], argv[1], on - 1, b, (be - 2) - t);
 		if (c == NULL)
 		{
 			for (ts = 0; d[ts]; ts++)
 				_putchar(d[ts]);
-			free(a);
+			free(b);
 			exit(98);
 		}
 	}
