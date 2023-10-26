@@ -3,7 +3,7 @@
 #include <stdlib.h>
 #include <stdio.h>
 
-int main(int argc, char *argv[]);
+int argue(int argc, char *argv[]);
 void intial(char *pnt, int d);
 void _move(char *mv, int k);
 char *mul(char d, char *na, int num_in, char *din, int d_in);
